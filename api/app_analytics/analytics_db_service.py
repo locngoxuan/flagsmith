@@ -21,7 +21,7 @@ from django.utils import timezone
 from environments.models import Environment
 from features.models import Feature
 
-ANALYTICS_READ_BUCKET_SIZE = 15
+ANALYTICS_READ_BUCKET_SIZE = settings.ANALYTICS_READ_BUCKET_SIZE
 
 
 def get_usage_data(

@@ -22,10 +22,10 @@ from .models import (
 if settings.USE_POSTGRES_FOR_ANALYTICS:
 
     @register_recurring_task(
-        run_every=timedelta(minutes=60),
+        run_every=timedelta(minutes=settings.ANALYTICS_RUN_EVERY),
         kwargs={
             "bucket_size": ANALYTICS_READ_BUCKET_SIZE,
-            "run_every": 60,
+            "run_every": settings.ANALYTICS_RUN_EVERY,
         },
     )
     def populate_bucket(
